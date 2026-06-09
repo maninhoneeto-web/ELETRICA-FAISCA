@@ -1,0 +1,8 @@
+{
+  "name": "Faísca - Elétrica - Mecânica",
+  "description": "Oficina mecânica especializada em elétrica automotiva, diagnósticos computadorizados OBD, suspensão, freios e reparos rápidos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
