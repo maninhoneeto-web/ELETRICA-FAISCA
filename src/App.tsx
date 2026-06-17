@@ -259,7 +259,7 @@ export default function App() {
           <div className="flex items-center gap-4 text-xs">
             <span className="text-zinc-400 font-mono">Brasília, DF & Regiões</span>
             <a
-              href="https://api.whatsapp.com/send?phone=5561984520410&text=Ol%C3%A1%20Fa%C3%ADsca!%20Encontrei%20voc%C3%AAs%20no%20site%20e%20gostaria%20de%20esclarecer%20detalhes."
+              href="https://api.whatsapp.com/send?phone=5561984520410&text=Ol%C3%A1%20Volts!%20Encontrei%20voc%C3%AAs%20no%20site%20e%20gostaria%20de%20esclarecer%20detalhes."
               target="_blank"
               rel="noreferrer"
               className="px-3.5 py-1.5 bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 text-[11px] font-bold font-mono uppercase tracking-wider rounded-lg transition-colors border border-emerald-500/20"
@@ -581,7 +581,7 @@ export default function App() {
         </div>
 
         <a
-          href="https://api.whatsapp.com/send?phone=5561984520410&text=Ol%C3%A1%20Oficina%20Fa%C3%ADsca!%20Enviei%20essa%20mensagem%20atrav%C3%A9s%20do%20site.%20Gostaria%20de%20esclarecer%20ou%20solicitar%20um%20diagn%C3%B3stico%20eletromec%C3%A2nico."
+          href="https://api.whatsapp.com/send?phone=5561984520410&text=Ol%C3%A1%20Oficina%20Volts!%20Enviei%20essa%20mensagem%20atrav%C3%A9s%20do%20site.%20Gostaria%20de%20esclarecer%20ou%20solicitar%20um%20diagn%C3%B3stico%20eletromec%C3%A2nico."
           target="_blank"
           rel="noreferrer"
           className="relative bg-emerald-500 hover:bg-emerald-600 h-14 w-14 rounded-full flex items-center justify-center text-neutral-950 shadow-[0_4px_16px_rgba(16,185,129,0.4)] group transition-transform duration-300 hover:scale-110 cursor-pointer"
