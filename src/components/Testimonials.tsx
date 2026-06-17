@@ -17,7 +17,7 @@ const REVIEWS: TestimonialItem[] = [
     name: "Rodrigo Santana de Souza",
     vehicle: "Chevrolet Prisma 1.4 LTPS",
     service: "Diagnóstico OBD e Troca de Alternador",
-    comment: "O carro estava morrendo do nada e acendia várias luzes. Passei em duas oficinas e queriam trocar a central eletrônica inteira! Levei na Faísca, passaram o scanner avançado e acharam apenas um curto de chicote e escovas gastas no alternador. Resolvido rápido e preço honesto. Extremamente recomendados!",
+    comment: "O carro estava morrendo do nada e acendia várias luzes. Passei em duas oficinas e queriam trocar a central eletrônica inteira! Levei na Volts, passaram o scanner avançado e acharam apenas um curto de chicote e escovas gastas no alternador. Resolvido rápido e preço honesto. Extremamente recomendados!",
     rating: 5,
     date: "14 Mai 2026"
   },

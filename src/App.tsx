@@ -34,6 +34,9 @@ import ShopDetails from './components/ShopDetails';
 import Testimonials from './components/Testimonials';
 import WorkOrderSystem from './components/WorkOrderSystem';
 
+// @ts-ignore
+import storefrontImg from './assets/images/volts_storefront_audi_rs6_1781707115524.jpg';
+
 // FAQ list
 interface FAQItem {
   id: number;
@@ -172,7 +175,7 @@ export default function App() {
               <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-ping" />
               Oficina Especializada
             </p>
-            <span className="text-[10px] font-sans text-zinc-400 mt-1 block font-medium">Faísca © Autodiagnósticos</span>
+            <span className="text-[10px] font-sans text-zinc-400 mt-1 block font-medium">Volts © Autodiagnósticos</span>
           </div>
 
           {/* Navigation Links list */}
@@ -219,7 +222,7 @@ export default function App() {
             <a href="tel:551155554321" className="text-zinc-200 hover:text-amber-400 text-xs font-bold font-mono transition-colors block mt-0.5">
               (11) 5555-4321
             </a>
-            <span className="text-[9px] text-zinc-500 block mt-1 leading-none font-sans">Av. Faísca Elétrica, 1050</span>
+            <span className="text-[9px] text-zinc-500 block mt-1 leading-none font-sans">Av. Volts, 1050</span>
           </div>
 
           <div className="flex items-center justify-between text-[10px] text-zinc-600 font-mono">
@@ -283,14 +286,26 @@ export default function App() {
               {activeTab === 'dashboard' && (
                 <div className="space-y-8 animate-fade-in" id="panel-dashboard">
                   {/* Majestic Banner of requested items */}
-                  <div className="p-8 md:p-12 bg-gradient-to-br from-neutral-900 to-neutral-950 border border-zinc-800 rounded-3xl relative overflow-hidden">
+                  <div className="p-8 md:p-12 border border-zinc-800 rounded-3xl relative overflow-hidden bg-neutral-950">
+                    {/* Storefront background with Audi RS6, with high contrast dark overlay to guarantee readability */}
+                    <div className="absolute inset-0 z-0">
+                      <img 
+                        src={storefrontImg} 
+                        alt="Volts Oficina Audi RS6 Storefront" 
+                        className="w-full h-full object-cover opacity-35 scale-105 hover:scale-100 transition-transform duration-1000"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-transparent to-neutral-950/40" />
+                    </div>
+
                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-amber-500/10 to-transparent rounded-full blur-[100px] pointer-events-none" />
                     
                     <div className="max-w-2xl space-y-6 relative z-10 text-left">
                       <div className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-amber-500" />
                         <span className="text-xs text-amber-500 font-mono font-bold tracking-widest uppercase">
-                          Elétrica Automotiva Faísca
+                          Elétrica Automotiva Volts
                         </span>
                       </div>
 
@@ -301,8 +316,8 @@ export default function App() {
                         </span>
                       </h2>
 
-                      <p className="text-zinc-400 text-sm leading-relaxed">
-                        Somos especialistas certificados em <strong>elétrica de alta tensão, diagnósticos computadorizados através de Scanner avançado</strong>, freios, suspensão e reparos de mecânica leve. Fornecemos um relatório de triagem completo do motor às luzes do seu painel.
+                      <p className="text-zinc-300 text-sm leading-relaxed antialiased">
+                        Somos especialistas certificados em <strong>elétrica de alta tensão, diagnósticos computadorizados através de Scanner avançado</strong>, freios, suspensão e reparos de mecânica leve. Fornecemos um relatório de triagem completo do motor às luzes do seu painel com precisão máxima.
                       </p>
 
                       <div className="flex flex-wrap gap-3">
@@ -316,7 +331,7 @@ export default function App() {
 
                         <button
                           onClick={() => setActiveTab('servicos')}
-                          className="px-5 py-3 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-neutral-900/60 text-zinc-300 text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer uppercase tracking-wider"
+                          className="px-5 py-3 rounded-xl border border-zinc-800 hover:border-zinc-700 bg-neutral-900/60 text-zinc-300 text-xs font-bold flex items-center justify-center gap-2 transition-colors cursor-pointer uppercase tracking-wider animate-pulse"
                         >
                           Catálogo de Serviços
                         </button>
@@ -487,7 +502,7 @@ export default function App() {
           <div className="text-center md:text-left mb-6">
             <h3 className="text-base sm:text-lg font-bold text-zinc-100 tracking-tight flex items-center justify-center md:justify-start gap-2">
               <HelpCircle className="h-4 w-4 text-amber-500 animate-pulse" />
-              Manual Faísca — Tire Dúvidas Técnicas Frequentes
+              Manual Volts — Tire Dúvidas Técnicas Frequentes
             </h3>
             <p className="text-zinc-400 text-xs mt-1">
               Esclarecimentos resumidos elaborados pelos nossos especialistas automotivos.
@@ -539,10 +554,10 @@ export default function App() {
         <footer className="bg-neutral-950 border-t border-zinc-900/80 pt-8 mt-16 pb-4" id="view-bottom-footer">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b border-zinc-900">
             <span className="text-[10px] font-mono text-zinc-400 uppercase tracking-widest font-black italic">
-              FAÍSCA - ELÉTRICA - MECÂNICA
+              VOLTS - ELÉTRICA - MECÂNICA
             </span>
             <p className="text-zinc-650 text-[10px] font-mono text-center md:text-right">
-              Brasília, DF • Av. Faísca Elétrica, 1050 • Telefones Fixo & WhatsApp
+              Brasília, DF • Av. Volts, 1050 • Telefones Fixo & WhatsApp
             </p>
           </div>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-[9px] text-zinc-500 font-mono">
@@ -550,7 +565,7 @@ export default function App() {
               <span>* Atendimento elétrico e mecânico certificado multimarcas</span>
               <span>* Chars & logs simulados para fins ilustrativos</span>
             </div>
-            <span>© 2026 Elétrica Automotiva Faísca</span>
+            <span>© 2026 Elétrica Automotiva Volts</span>
           </div>
         </footer>
 

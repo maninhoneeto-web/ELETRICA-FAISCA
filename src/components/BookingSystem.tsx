@@ -154,7 +154,7 @@ export default function BookingSystem({
                 </span>
                 <h4 className="text-lg font-bold text-zinc-100 mt-1">Código: {appointmentSuccess.id}</h4>
                 <p className="text-xs text-zinc-400 mt-2 max-w-sm mx-auto">
-                  Olá <strong className="text-zinc-200">{appointmentSuccess.name}</strong>, seu horário de atendimento foi pré-registrado na base da Faísca com sucesso!
+                  Olá <strong className="text-zinc-200">{appointmentSuccess.name}</strong>, seu horário de atendimento foi pré-registrado na base da Volts com sucesso!
                 </p>
               </div>
 
@@ -446,7 +446,7 @@ export default function BookingSystem({
           <div className="border-t border-zinc-800/80 pt-4 mt-4 text-center">
             <span className="text-[10px] text-zinc-600 font-mono flex items-center justify-center gap-1.5 leading-none">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-ping" />
-              Sincronizado em tempo real com a frotas Faísca
+              Sincronizado em tempo real com as frotas Volts
             </span>
           </div>
         </div>

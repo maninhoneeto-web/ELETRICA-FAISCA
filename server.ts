@@ -37,12 +37,12 @@ async function startServer() {
             "Evite usar aparelhos elétricos com o motor do carro desligado.",
             "Verifique visualmente se há sinais de oxidação ('zinabre') nos polos da bateria."
           ],
-          faiscaServices: [
+          voltsServices: [
             "Diagnóstico Computadorizado OBD de Injeção Eletrônica",
             "Revisão Eletro-Mecânica Expressa",
             "Teste de Alternador e Substituição de Baterias homologadas"
           ],
-          professionalAdvice: "Nota da Faísca: Chave API indisponível, mas com base no sintoma relatado, recomendamos fazer um teste de carga de bateria. Venha fazer um teste gratuito conosco na oficina!"
+          professionalAdvice: "Nota da Volts: Chave API indisponível, mas com base no sintoma relatado, recomendamos fazer um teste de carga de bateria. Venha fazer um teste gratuito conosco na oficina!"
         });
       }
 
@@ -59,7 +59,7 @@ async function startServer() {
         ? `${carInfo.make || ''} ${carInfo.model || ''} ${carInfo.year || ''} ${carInfo.engine || ''}`.trim() 
         : "Veículo não especificado";
 
-      const prompt = `Você é o mecânico chefe especialista em tecnologia, eletricidade automotiva e diagnósticos avançados da oficina 'Elétrica Automotiva Faísca'.
+      const prompt = `Você é o mecânico chefe especialista em tecnologia, eletricidade automotiva e diagnósticos avançados da oficina 'Elétrica Automotiva Volts'.
 Um cliente está relatando problemas no carro dele. Analise as informações e forneça um parecer técnico detalhado e acolhedor em português do Brasil.
 
 Veículo: ${carDetail}
@@ -71,7 +71,7 @@ Responda restritamente no formato do esquema JSON configurado, sem tags extras d
         model: "gemini-3.5-flash",
         contents: prompt,
         config: {
-          systemInstruction: "Você é o mecânico chefe especialista em tecnologia, eletricidade automotiva e diagnósticos avançados da oficina 'Elétrica Automotiva Faísca'. Seja profissional, acolhedor e direto ao ponto. Explique os termos técnicos de modo que um leigo entenda, reforçando que somos a melhor oficina física ('Elétrica Automotiva Faísca') para realizar os testes com scanners e ferramentas apropriadas. Foco de atuação: elétrica automotiva, diagnósticos eletrônicos, freios, suspensão e pequenos reparos de mecânica.",
+          systemInstruction: "Você é o mecânico chefe especialista em tecnologia, eletricidade automotiva e diagnósticos avançados da oficina 'Elétrica Automotiva Volts'. Seja profissional, acolhedor e direto ao ponto. Explique os termos técnicos de modo que um leigo entenda, reforçando que somos a melhor oficina física ('Elétrica Automotiva Volts') para realizar os testes com scanners e ferramentas apropriadas. Foco de atuação: elétrica automotiva, diagnósticos eletrônicos, freios, suspensão e pequenos reparos de mecânica.",
           responseMimeType: "application/json",
           responseSchema: {
             type: Type.OBJECT,
@@ -90,17 +90,17 @@ Responda restritamente no formato do esquema JSON configurado, sem tags extras d
                 items: { type: Type.STRING },
                 description: "Lista com 2 a 3 conselhos ou procedimentos de segurança para o motorista no curto prazo"
               },
-              faiscaServices: {
+              voltsServices: {
                 type: Type.ARRAY,
                 items: { type: Type.STRING },
-                description: "Lista de 2 ou 3 serviços da nossa oficina Faísca indicados para resolver o problema apresentado"
+                description: "Lista de 2 ou 3 serviços da nossa oficina Volts indicados para resolver o problema apresentado"
               },
               professionalAdvice: {
                 type: Type.STRING,
                 description: "Um parecer ou recado profissional curto, de 3 ou 4 frases, consolando ou explicando o caso e convidando o cliente a nos visitar amigavelmente."
               }
             },
-            required: ["possibleCauses", "urgency", "recommendations", "faiscaServices", "professionalAdvice"]
+            required: ["possibleCauses", "urgency", "recommendations", "voltsServices", "professionalAdvice"]
           }
         }
       });
@@ -125,7 +125,7 @@ Responda restritamente no formato do esquema JSON configurado, sem tags extras d
   // Armazenamento em memória dos agendamentos simulados
   const appointments: any[] = [
     {
-      id: "FAISCA-7182",
+      id: "VOLTS-7182",
       name: "Roberta Cavalcante",
       phone: "(11) 98765-4321",
       carModel: "Hyundai HB20 1.0",
@@ -138,7 +138,7 @@ Responda restritamente no formato do esquema JSON configurado, sem tags extras d
       createdAt: new Date().toISOString()
     },
     {
-      id: "FAISCA-3918",
+      id: "VOLTS-3918",
       name: "Marcos Souza",
       phone: "(11) 91234-5678",
       carModel: "GM Chevrolet Onix 1.4",
@@ -160,7 +160,7 @@ Responda restritamente no formato do esquema JSON configurado, sem tags extras d
       }
 
       const newAppointment = {
-        id: "FAISCA-" + Math.floor(1000 + Math.random() * 9000),
+        id: "VOLTS-" + Math.floor(1000 + Math.random() * 9000),
         name,
         phone,
         carModel,

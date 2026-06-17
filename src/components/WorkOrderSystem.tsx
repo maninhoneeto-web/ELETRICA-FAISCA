@@ -321,7 +321,7 @@ export default function WorkOrderSystem() {
       const partsStr = partsList.map(p => `•   ${p.name}: R$ ${p.price.toFixed(2)}`).join('\n') || 'Nenhuma peça cadastrada';
       const laborStr = laborList.map(l => `•   ${l.name}: R$ ${l.price.toFixed(2)}`).join('\n') || 'Nenhuma mão-de-obra cadastrada';
       
-      messageText = `⚡ *ORÇAMENTO DA OFICINA AUTOMOTIVA FAÍSCA* ⚡
+      messageText = `⚡ *ORÇAMENTO DA OFICINA AUTOMOTIVA VOLTS* ⚡
       
 Olá, *${name}*! Segue o detalhamento técnico do orçamento para o seu veículo *${carDetails}* (${plate}):
 
@@ -337,11 +337,11 @@ ${partsStr}
 💰 *VALOR FINAL LÍQUIDO:* R$ ${grandTotal.toFixed(2)}
 
 Gostaria de aprovar a realização deste serviço? Respondendo sim, nossa equipe já inicia o reparo express!
-_Elétrica e Diagnósticos Avançados Faísca_ 🏍️🚗`;
+_Elétrica e Diagnósticos Avançados Volts_ 🏍️🚗`;
     } 
     
     else if (type === 'checkin') {
-      messageText = `📝 *CONFIRMAÇÃO DE CHECK-IN - OFICINA FAÍSCA* 📝
+      messageText = `📝 *CONFIRMAÇÃO DE CHECK-IN - OFICINA VOLTS* 📝
 
 Olá, *${name}*! Confirmamos a entrada oficial do seu veículo *${carDetails}* (${plate}) na nossa oficina para análise eletromecânica:
 
@@ -361,7 +361,7 @@ Sua Ordem de Serviço foi aberta sob o código: *${idCode}*. Você receberá atu
     } 
     
     else if (type === 'checkout') {
-      messageText = `🏁 *CONFIRMAÇÃO DE CHECK-OUT & ENTREGA - OFICINA FAÍSCA* 🏁
+      messageText = `🏁 *CONFIRMAÇÃO DE CHECK-OUT & ENTREGA - OFICINA VOLTS* 🏁
 
 Olá, *${name}*! Comunicamos que o seu veículo *${carDetails}* (${plate}) está pronto e revisado!
 
@@ -990,7 +990,7 @@ Nossa equipe agradece imensamente a confiança! Estamos prontos para a próxima 
                     <label className="text-[10px] font-mono text-zinc-400 uppercase block">Técnico/Testador Responsável</label>
                     <input
                       type="text"
-                      placeholder="Ex: Eng. Mário Faísca"
+                      placeholder="Ex: Eng. Mário Volts"
                       value={checkOutTestedBy}
                       onChange={(e) => setCheckOutTestedBy(e.target.value)}
                       className="w-full text-xs p-2.5 bg-neutral-950 border border-zinc-800 focus:border-emerald-500 rounded-lg outline-none text-zinc-100 placeholder-zinc-700"

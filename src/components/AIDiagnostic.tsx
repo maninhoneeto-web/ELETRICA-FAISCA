@@ -28,7 +28,7 @@ export default function AIDiagnostic({ onPreFillBooking }: AIDiagnosticProps) {
     'Varrendo barramento CAN do veículo...',
     'Consultando mapeamento de sensores OBD-II...',
     'Mapeando diagrama fiação elétrica...',
-    'Sincronizando com a base de engenharia Faísca...',
+    'Sincronizando com a base de engenharia Volts...',
     'Gerando parecer técnico com Inteligência Artificial...'
   ];
 
@@ -88,12 +88,12 @@ export default function AIDiagnostic({ onPreFillBooking }: AIDiagnosticProps) {
           "Verifique se o terminal da bateria está solto ou oxidado com zinabre.",
           "Procure a oficina mais próxima se sentir um cheiro metálico quente."
         ],
-        faiscaServices: [
+        voltsServices: [
           "Diagnóstico Computadorizado com Scanner OBD-II",
           "Teste Completo Elétrico de Alternador e Bateria",
           "Reparo de Injeção Eletrônica"
         ],
-        professionalAdvice: "Olá! Devido à indisponibilidade momentânea do canal satélite de IA, preparamos essa triagem expressa. Sintomas elétricos ou de injeção necessitam de leitura precisa via scanner para evitar falhas maiores na central. Venha até a Faísca e faremos a leitura gratuita do seu carro!"
+        professionalAdvice: "Olá! Devido à indisponibilidade momentânea do canal satélite de IA, preparamos essa triagem expressa. Sintomas elétricos ou de injeção necessitam de leitura precisa via scanner para evitar falhas maiores na central. Venha até a Volts e faremos a leitura gratuita do seu carro!"
       });
     } finally {
       setLoading(false);
@@ -102,7 +102,7 @@ export default function AIDiagnostic({ onPreFillBooking }: AIDiagnosticProps) {
 
   const handleCopyReport = () => {
     if (!result) return;
-    const reportText = `=== RELATÓRIO DE PRÉ-DIAGNÓSTICO AUTOMOTIVO FAÍSCA ===
+    const reportText = `=== RELATÓRIO DE PRÉ-DIAGNÓSTICO AUTOMOTIVO VOLTS ===
 Veículo: ${carInfo.make || ''} ${carInfo.model || ''} (${carInfo.year || 'N/I'})
 Sintomas descritos: ${symptoms}
 Urgência recomendada: ${result.urgency}
@@ -113,8 +113,8 @@ ${result.possibleCauses.map((c, i) => `${i + 1}. ${c}`).join('\n')}
 Recomendações imediatas:
 ${result.recommendations.map((r, i) => `${i + 1}. ${r}`).join('\n')}
 
-Serviços Indicados (Faísca):
-${result.faiscaServices.join(', ')}
+Serviços Indicados (Volts):
+${result.voltsServices.join(', ')}
 
 Parecer Profissional:
 ${result.professionalAdvice}
@@ -332,7 +332,7 @@ ${result.professionalAdvice}
               {/* Professional Statement Callout */}
               <div className="mt-2.5 p-3.5 rounded-xl bg-amber-500/5 border border-amber-500/20">
                 <span className="text-[11px] font-mono text-amber-500 uppercase tracking-widest block font-extrabold mb-1">
-                  Parecer Técnico Oficial Faísca:
+                  Parecer Técnico Oficial Volts:
                 </span>
                 <p className="text-xs text-zinc-300 leading-relaxed italic">
                   "{result.professionalAdvice}"
@@ -342,7 +342,7 @@ ${result.professionalAdvice}
               {/* Recommended Services list */}
               <div className="flex flex-wrap items-center gap-1.5 mt-2.5 py-1.5">
                 <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mr-1.5">Serviços Indicados:</span>
-                {result.faiscaServices.map((serv, idx) => (
+                {result.voltsServices.map((serv, idx) => (
                   <span key={idx} className="text-[10px] py-0.5 px-2 rounded-lg bg-neutral-900 text-amber-400 border border-zinc-800">
                     {serv}
                   </span>
@@ -373,7 +373,7 @@ ${result.professionalAdvice}
                   id="fill-appointment-with-diagnostic-btn"
                   onClick={() => {
                     // Pre-fill booking utilizing first recommended service or standard description
-                    const mainServ = result.faiscaServices[0] || 'Diagnóstico de Injeção Eletrônica';
+                    const mainServ = result.voltsServices[0] || 'Diagnóstico de Injeção Eletrônica';
                     const preNotes = `Relatório gerado via Triagem de IA. Sintomas: ${symptoms}. Possíveis causas: ${result.possibleCauses.join(', ')}`;
                     onPreFillBooking(mainServ, preNotes);
                   }}

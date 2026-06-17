@@ -9,7 +9,7 @@ export interface DiagnosticResult {
   possibleCauses: string[];
   urgency: 'Baixa' | 'Média' | 'Alta' | string;
   recommendations: string[];
-  faiscaServices: string[];
+  voltsServices: string[];
   professionalAdvice: string;
 }
 

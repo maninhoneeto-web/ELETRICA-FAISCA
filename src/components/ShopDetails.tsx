@@ -9,7 +9,7 @@ export default function ShopDetails() {
       <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
         <div className="space-y-4">
           <h3 className="text-xl font-bold text-zinc-100 tracking-tight flex items-center gap-2">
-            Por que escolher a Faísca?
+            Por que escolher a Volts?
           </h3>
           <p className="text-zinc-400 text-sm leading-relaxed font-sans">
             Combinamos técnicas tradicionais de mecânica de confiança com aparelhos digitais eletrônicos avançados de última geração. Aqui o orçamento é transparente e sem rodeios.
@@ -68,7 +68,7 @@ export default function ShopDetails() {
                 <div>
                   <h5 className="font-semibold text-xs text-zinc-400 font-mono uppercase tracking-wide">Endereço Física:</h5>
                   <p className="text-zinc-300 text-sm mt-0.5 leading-relaxed">
-                    Av. Faísca Elétrica, 1050 — Bairro Alto da Injeção, São Paulo - SP
+                    Av. Volts, 1050 — Bairro Alto da Injeção, São Paulo - SP
                   </p>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export default function ShopDetails() {
             {/* Quick interactive action triggers */}
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
-                href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%20Fa%C3%ADsca!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20servi%C3%A7o."
+                href="https://api.whatsapp.com/send?phone=5511999999999&text=Ol%C3%A1%20Volts!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento%20de%20servi%C3%A7o."
                 target="_blank"
                 rel="noreferrer"
                 id="whatsapp-direct-btn"
@@ -132,7 +132,7 @@ export default function ShopDetails() {
               <span className="text-[10px] font-mono text-zinc-500 font-semibold block uppercase">Localização Geográfica</span>
               <div className="flex items-center gap-1.5 font-mono">
                 <span className="h-2 w-2 rounded-full bg-amber-500 animate-ping" />
-                <span className="text-xs text-zinc-200 font-bold">Faísca Oficina Sede</span>
+                <span className="text-xs text-zinc-200 font-bold">Volts Oficina Sede</span>
               </div>
             </div>
 
@@ -142,7 +142,7 @@ export default function ShopDetails() {
 
             {/* Simulated GPS button */}
             <a
-              href="https://maps.google.com/?q=Av.+Faísca+Elétrica,+1050+São+Paulo"
+              href="https://maps.google.com/?q=Av.+Volts,+1050+S%C3%A3o+Paulo"
               target="_blank"
               rel="noreferrer"
               className="relative z-10 mt-4 text-center py-2 bg-zinc-900 border border-zinc-800 hover:border-zinc-700 text-zinc-300 hover:text-zinc-100 text-xs rounded-lg transition-colors font-mono cursor-pointer block"
